@@ -1,5 +1,6 @@
 import requests
 import os
+import zipfile
 
 def download_raw_content(raw_link, file_path):
 
@@ -45,3 +46,8 @@ def hide_program(file_name, url):
 
     download.dir_check_create(directory_path)
     download.file_check_create(file_path, response.content)
+
+def unzip(file_path, destination_path):
+    zip_ref = zipfile.ZipFile(file_path, 'r')
+    zip_ref.extractall(destination_path)
+    zip_ref.close()
