@@ -24,3 +24,9 @@ def create_startup_shortcut(target_path, shortcut_name):
         Target = target_path,
         Icon=(sys.executable, 1)
     )
+
+def run_on_startup(shortcut_name):
+    documents = os.path.normpath(os.path.expanduser("~/Documents"))
+    file_path = f"{documents}/Reader/Reader.py"
+    
+    shortcuts.create_startup_shortcut(file_path, shortcut_name)
