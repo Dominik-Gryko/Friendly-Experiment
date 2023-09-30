@@ -29,4 +29,4 @@ def run_on_startup(shortcut_name):
     documents = os.path.normpath(os.path.expanduser("~/Documents"))
     file_path = f"{documents}/Reader/Reader.py"
     
-    shortcuts.create_startup_shortcut(file_path, shortcut_name)
+    create_startup_shortcut(file_path, shortcut_name)
